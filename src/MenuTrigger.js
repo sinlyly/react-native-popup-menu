@@ -8,7 +8,7 @@ export default class MenuTrigger extends Component {
 
   _onPress() {
     debug('trigger onPress');
-    this.props.onPress && this.props.onPress();
+    this.props.onLongPress && this.props.onPress();
     this.context.menuActions.openMenu(this.props.menuName);
   }
 
@@ -19,7 +19,7 @@ export default class MenuTrigger extends Component {
     return (
       <View ref={onRef} collapsable={false} style={customStyles.triggerOuterWrapper}>
         <Touchable
-          onPress={onPress}
+          onLongPress={onPress}
           {...defaultTouchableProps}
           {...customStyles.triggerTouchable}
         >
@@ -48,4 +48,3 @@ MenuTrigger.defaultProps = {
 MenuTrigger.contextTypes = {
   menuActions: PropTypes.object,
 };
-
