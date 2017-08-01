@@ -6,7 +6,7 @@ import { Platform, TouchableHighlight, TouchableNativeFeedback } from 'react-nat
 export const measure = ref => new Promise((resolve) => {
   ref.measure((x, y, width, height, pageX, pageY) => {
     resolve({
-      x: pageX, y: pageY,
+      x: pageX, y: pageY-25,
       width, height
     })
   });
